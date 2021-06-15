@@ -1,0 +1,24 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "/images/favicon-128x128.png",
+         "16": "/images/favicon-16x16.png",
+         "32": "/images/favicon-32x32.png",
+         "48": "/images/favicon-32x32.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "description": "A faster way to get your vaccine slot in India",
+   "icons": {
+      "128": "/images/favicon-128x128.png",
+      "16": "/images/favicon-16x16.png",
+      "32": "/images/favicon-32x32.png",
+      "48": "/images/favicon-32x32.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvsLAdRtKLBveC8Dv6a4EbNv0FImYxFtjjBdwtsON4lDeOlWtVMJWi3QO6qFPv47GmzEOZhQMGN44CTMg0rniX4WV4NIw25yBLUCYYR2W4i7G+OvySaxRPmwW57hcELdsrdQ/yQnKkfA6IT1N5SNs5InI0ZE622Zf2mkkvtMUr0zzRlfoVqaEPH1Z8l5YAUhT4RDqT6PujGHkxxM5+JRim0plmbc5vXq46aSgviklNbui3bdBvxSYFVUzVl6DKVNcRIgGUUzY+zBuvFBsB+DmVBUxY5k4OZvUa0USUQcv67RYJ+x2E4tYVKADvt+UeG/DDK2np+5dAJivOFD90raL5QIDAQAB",
+   "manifest_version": 3,
+   "name": "CoWIN Bot",
+   "permissions": [ "storage", "activeTab", "scripting" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.53"
+}

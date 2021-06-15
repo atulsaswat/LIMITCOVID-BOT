@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <div style="width: 380px; padding: 10px">
+    <div class="alert alert-primary text-center" role="alert" style="font-size: 12px">
+      CSE, VSSUT - Major Project
+    </div>
+
+    <div id="status" style="text-align: center">
+        <div></div>
+        <button type="button" class="btn btn-primary btn-outline-primary" id="stop">Stop</button>
+    </div>
+    <div id="form">
+      <div class="form-group">
+        <label for="age">Age</label>
+        <select id="age" class="custom-select custom-select-sm mb-1">
+          <option value="Age 18+">18+</option>
+          <option value="Age 45+">45+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Search Type</label>
+        <div class="form-group">
+          <input type="radio" name="search_type" value="districts" id="radio-districts" checked><label for="radio-districts" class="ml-2">Districts</label>
+          <input type="radio" name="search_type" value="pincode" id="radio-pincode"><label for="radio-pincode" class="ml-2">Pincodes</label>
+        </div>
+      </div>
+      <div id="district_search">
+        <div class="form-group">
+          <label for="state">State</label>
+          <select id="state" class="custom-select custom-select-sm mb-1">
+              <option value="Andaman And Nicobar Islands">Andaman And Nicobar Islands</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Dadra And Nagar Haveli">Dadra And Nagar Haveli</option>
+              <option value="Daman And Diu">Daman And Diu</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jammu And Kashmir">Jammu And Kashmir</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Ladakh">Ladakh</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Puducherry">Puducherry</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="districts">Districts</label>
+          <input type="text" class="form-control" id="districts" placeholder="e.g., New Delhi, North Delhi">
+          <small id="emailHelp" class="form-text text-muted">Leave empty to search for all districts</small>
+        </div>
+      </div>
+      <div id="pin_search" class="form-group">
+          <label for="pincodes">PIN Codes</label>
+          <input type="text" class="form-control" id="pincodes" placeholder="e.g., 110001, 110002">
+          <small id="emailHelp" class="form-text text-muted">Comma separated list of pin codes</small>
+        </div>
+      <div class="form-group">
+        <label for="vaccine">Vaccine</label>
+        <select id="vaccine" class="custom-select custom-select-sm mb-1">
+          <option value="any">Any</option>
+          <option value="Covishield">Covishield</option>
+          <option value="Covaxin">Covaxin</option>
+          <option value="Sputnik V">Sputnik V</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <select id="price" class="custom-select custom-select-sm mb-1">
+          <option value="any">Any</option>
+          <option value="Free">Free</option>
+          <option value="Paid">Paid</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="beneficiaries">Minimum Slots</label>
+        <input type="number" class="form-control" id="beneficiaries" value="1">
+        <small id="emailHelp" class="form-text text-muted">Bot will only look for centers which have at least these many slots</small>
+      </div>
+      <div class="form-group">
+        <label for="time_slot">Time Slot</label>
+        <select id="time_slot" class="custom-select custom-select-sm mb-1">
+          <option value="1">First Slot (usually 9am - 11am)</option>
+          <option value="2">Second Slot (usually 11am - 1pm)</option>
+          <option value="3">Third Slot (usually 1pm - 3pm)</option>
+          <option value="4">Fourth Slot (usually 3pm - 5pm)</option>
+        </select>
+        <small id="emailHelp" class="form-text text-muted">Actual timings may vary from one center to another</small>
+      </div>
+      <div class="form-group">
+        <label for="runs">Number of runs</label>
+        <input type="number" class="form-control" id="runs" value="10">
+        <small id="emailHelp" class="form-text text-muted">Number of times you want this to run until a slot is found. Do not keep this too high if you are searching for a large number of districts or pincodes. Too many requests within a small period of time could lead to your IP getting blocked temporarily (you'll start seeing "Something went wrong" error)</small>
+      </div>
+      <div class="form-group">
+        <label for="runs">Wait Time (in seconds)</label>
+        <input type="number" class="form-control" id="wait_time" value="2">
+        <small id="emailHelp" class="form-text text-muted">Number of seconds to wait after each search. Too many requests within a small period of time could lead to your IP getting blocked temporarily (you'll start seeing "Something went wrong" error)</small>
+      </div>
+      <div class="form-group">
+        <label for="skip_days">Skip days</label>
+        <input type="number" class="form-control" id="skip_days" value="0">
+        <small id="emailHelp" class="form-text text-muted">Slots will be searched after these number of days. For e.g., if this is set to 1, today will be skipped</small>
+      </div>
+      <div class="form-group">
+        <label for="weeks">Look until</label>
+        <select id="weeks" class="custom-select custom-select-sm mb-1">
+          <option value="0">This week</option>
+          <option value="1">Next 2 weeks</option>
+        </select>
+      </div>
+      <div class="alert alert-secondary" role="alert" style="padding:5px; font-size: 14px">
+        <small id="emailHelp" class="form-text text-muted">
+            By clicking Submit and using this extension, you agree to the <a href="https://cowin-bot.s3-eu-west-1.amazonaws.com/tnc.html" target="_blank">terms and conditions</a>
+        </small>
+      </div>
+      <div style="text-align: center">
+      <button type="button" class="btn btn-success btn-outline-primary" id="submit">Submit</button>
+      </div>
+      
+      <script src="popup.js"></script>
+    </div>
+</div>
+  </body>
+</html>
