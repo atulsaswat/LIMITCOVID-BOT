@@ -1,0 +1,7 @@
+if ci_name not in pred_forward:
+            # If the data is in JSON format, convert it to DataFrame and store it in the dictionary
+            pred_data = pd.read_json(data, orient='split')
+            pred_data.set_index('ts', inplace=True)
+            pred_forward[ci_name] = pred_data
+        else:
+            pred_data = pred_forward[ci_name]
